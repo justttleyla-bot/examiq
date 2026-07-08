@@ -85,7 +85,6 @@ st.markdown("""
     color: #aaa !important;
 }
 
-/* File uploader — force white */
 [data-testid="stFileUploader"] {
     background: #fff !important;
     border: 1.5px dashed #d1ccc4 !important;
@@ -164,6 +163,29 @@ section[data-testid="stFileUploader"] * {
 
 .stProgress > div > div > div > div {
     background: linear-gradient(90deg, #7c3aed, #a78bfa) !important;
+}
+
+/* Fix text visibility */
+.stMarkdown {
+    color: #1a1a1a !important;
+}
+
+.stMarkdown p {
+    color: #1a1a1a !important;
+    line-height: 1.7 !important;
+}
+
+.stMarkdown li {
+    color: #1a1a1a !important;
+    line-height: 1.7 !important;
+}
+
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    color: #111 !important;
+}
+
+.stMarkdown strong {
+    color: #111 !important;
 }
 
 .stats-row {
