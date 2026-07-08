@@ -150,7 +150,13 @@ def clean_topics_with_ai(raw_topics, subject):
     from dotenv import load_dotenv
     load_dotenv()
     
-    client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+    try:
+        import streamlit as st
+        api_key = st.secrets["MISTRAL_API_KEY"]
+    except:
+        api_key = os.getenv("MISTRAL_API_KEY")
+    client = Mistral(api_key=api_key)
+    
     
     topics_str = ", ".join(raw_topics)
     

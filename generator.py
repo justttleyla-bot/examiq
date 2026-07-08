@@ -4,7 +4,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+try:
+    import streamlit as st
+    api_key = st.secrets["MISTRAL_API_KEY"]
+except:
+    api_key = os.getenv("MISTRAL_API_KEY")
+
+client = Mistral(api_key=api_key)
 
 def generate_practice_questions(topics, subject, difficulty, num_questions, sample_questions):
     """Generate practice questions using Mistral AI."""
